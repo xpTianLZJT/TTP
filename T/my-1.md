@@ -53,7 +53,7 @@
 |     符号      |                             描述                             |
 | :-----------: | :----------------------------------------------------------: |
 |  $x_{i}$          |    列车 $i$ 的编组长度， $x _i \in \{\underline{m} _i,\underline{m} _i +1,· · ·，\overline{m} _i\}$ |
-|   $y_{i}^{sj}$    |  如果列车 $i$ 在车站 $s$ 选择对齐方案 $j$ ，则等于 $1$ ；否则等于$0$                                                                        |
+|   $y_{i}^{sj}$    |  如果列车 $i$ 在车站 $s$ 选择对齐方案 $j$ ，则等于 $1$ ；否则等于0                                                                        |
 | $b_{iu}^{ss^{'}}$ | 在车站 $s$ 乘坐列车 $i$ 单元 $u$ 且目的地为车站 $s′$ 站  |
 
 > 此外，模型中所用的主要集合和参数如表1所示。
@@ -87,14 +87,14 @@ $$
 
 ### 约束条件
 
-- **列车长度和对齐方案约束**
+- **列车长度与对齐方案约束**
 
 $$
-x_{i}\geq\sum_{j\in J_{i}^{s}}y_{i}^{sj}\cdot l_{i}^{sj},\quad\forall s\in S,i\in I\tag{1}
+x_{i}\geq\sum_{j\in J_{i}^{s}}y_{i}^{sj}\cdot l_{i}^{sj},\quad\forall s\in S,i\in I \tag{1}
 $$
 
 $$
-\sum_{j\in J_{i}^{s}}y_{i}^{sj}=1,\quad\forall s\in S,i\in I.\tag{2}
+\sum_{j\in J_{i}^{s}}y_{i}^{sj}=1,\quad\forall s\in S,i\in I. \tag{2}
 $$
 
 - **客流控制约束**
