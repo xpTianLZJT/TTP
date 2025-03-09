@@ -79,10 +79,10 @@
 
 ### 目标函数
 
-本文目标函数由两部分构成，一是列车营运成本；二是所有乘客的等待时间。
+本文目标函数旨在最小化列车营运成本和乘客等待时间，具体如下：
 
 $$
-\sum_{i\in I}\alpha_i\cdot x_i+\sum_{i\in I}\sum_{(s,s')\in D}\beta_i^{ss^{\prime}}\cdot(a_i^{ss^{\prime}}-\sum_{i^{\prime}\leq i}\sum_{u\in U_{i^{\prime}}}b_{i^{\prime}u}^{ss^{\prime}})\cdot h_i^s
+\min\ \sum_{i\in I}\alpha_i\cdot x_i+\sum_{i\in I}\sum_{(s,s')\in D}\beta_i^{ss^{\prime}}\cdot(a_i^{ss^{\prime}}-\sum_{i^{\prime}\leq i}\sum_{u\in U_{i^{\prime}}}b_{i^{\prime}u}^{ss^{\prime}})\cdot h_i^s
 $$
 
 ### 约束条件
