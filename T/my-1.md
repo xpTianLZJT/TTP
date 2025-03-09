@@ -90,11 +90,11 @@ $$
 - **列车长度与对齐方案约束**
 
 $$
-x_{i}\geq\sum_{j\in J_{i}^{s}}y_{i}^{sj}\cdot l_{i}^{sj},\quad\forall s\in S,i\in I \tag{1}
+x_{i}\geq\sum_{j\in J_{i}^{s}}y_{i}^{sj}\cdot l_{i}^{sj},\quad\forall s\in S,i\in I
 $$
 
 $$
-\sum_{j\in J_{i}^{s}}y_{i}^{sj}=1,\quad\forall s\in S,i\in I. \tag{2}
+\sum_{j\in J_{i}^{s}}y_{i}^{sj}=1,\quad\forall s\in S,i\in I.
 $$
 
 - **客流控制约束**
