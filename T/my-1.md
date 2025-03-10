@@ -88,31 +88,35 @@ $$
 ### 约束条件
 
 - **列车长度与对齐方案约束**
-
+>
+每列列车在各站选择的对齐方案应满足最小列车长度要求，且还需保证方案选择的唯一性，具体约束如下：
+>
 $$
 x_{i}\geq\sum_{j\in J_{i}^{s}}y_{i}^{sj}\cdot l_{i}^{sj},\quad\forall s\in S,i\in I \quad (1)
 $$
 
 $$
-\sum_{j\in J_{i}^{s}}y_{i}^{sj}=1,\quad\forall s\in S,i\in I \quad (2).
+\sum_{j\in J_{i}^{s}}y_{i}^{sj}=1,\quad\forall s\in S,i\in I. \quad (2)
 $$
 
 - **客流控制约束**
 >
-$$
-\sum_{s^{\prime}\in S,s^{\prime}>s}b_{iu}^{ss^{\prime}}\leq\sum_{j\in J_{i}^{s}}y_{i}^{sj}\cdot k_{iu}^{sj}\cdot c,\forall u\in U_{i},s\in S,i\in I\tag{3}
-$$
+该约束通过控制乘客上下车活动，合理分配乘客至各列车单元，并需满足以下三项要求：其一，乘客所乘列车单元的门必须在起讫站点开启，以保障乘客顺利乘降；其二，严格遵守各列车单元的载客容量限制，确保分配乘客数不超载；其三，确保在任何时间，出发乘客的累积数量不超过到达乘客的累积数量。基于此，构建以下约束：
 >
 $$
-\sum_{s^{\prime}\in S,s^{\prime}<s}b_{iu}^{s^{\prime}s}\leq\sum_{j\in J_{i}^{s}}y_{i}^{sj}\cdot k_{iu}^{sj}\cdot c,\forall u\in U_{i},s\in S,i\in I\tag{4} 
+\sum_{s'\in S,s'>s}b_{iu}^{ss'}\leq\sum_{j\in J_{i}^{s}}y_{i}^{sj}\cdot k_{iu}^{sj}\cdot c,\forall u\in U_{i},s\in S,i\in I \quad (3)
 $$
->
+
 $$
-\sum_{s^{\prime}\leq s,s^{\prime\prime}>s}b_{iu}^{s^{\prime}s^{\prime\prime}}\leq c,\forall u\in U_{i},s\in S,i\in I\tag{5}
+\sum_{s'\in S,s'>s} b_{iu}^{s's} \leq \sum_{j\in J_i^s} y_{i}^{sj}\cdot k_{iu}^{sj}\cdot c,\forall u\in U_{i},s\in S,i\in I \quad (4)
 $$
->
+
 $$
-\sum_{i^{\prime}\leq i}\sum_{u\in U_{i^{\prime}}}b_{i^{\prime}u}^{ss^{\prime}}\leq a_{i}^{ss^{\prime}},\forall(s,s^{\prime})\in D,i\in I.\tag{6}
+\sum_{s'\leq s,s''>s}b_{iu}^{s's''}\leq c,\forall u\in U_{i},s\in S,i\in I \quad (5)
+$$
+
+$$
+\sum_{i'\leq i}\sum_{u\in U_{i'}}b_{i'u}^{ss'}\leq a_{i}^{ss'},\forall(s,s')\in D,i\in I. \quad (6)
 $$
 
 
