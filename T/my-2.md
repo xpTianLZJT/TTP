@@ -234,16 +234,16 @@ $$
 <center>图12 大规模算例线路及客流分布</center>
 
 >
-![XLT-SP的乘客累计等待过程](./figure/13.png)
-<center>图13 XLT-SP的乘客累计等待过程</center>
+![XLT-SP的乘客等待过程](./figure/13.png)
+<center>图13 XLT-SP的乘客等待过程</center>
 
 >
-![XLT-DP的乘客累计等待过程](./figure/14.png)
-<center>图14 XLT-DP的乘客累计等待过程</center>
+![XLT-DP的乘客等待过程](./figure/14.png)
+<center>图14 XLT-DP的乘客等待过程</center>
 
 >
-![RT-FIFO的乘客累计等待过程](./figure/15.png)
-<center>图15 RT-FIFO的乘客累计等待过程</center>
+![RT-FIFO的乘客等待过程](./figure/15.png)
+<center>图15 RT-FIFO的乘客等待过程</center>
 
 >
 此外，本文考虑多组不同规模算例，验证以下四种求解方法的计算效率。其中，G-M0方法表示直接利用GUROBI求解模型M0，SBD-M0方法表示采用标准Benders分解求解模型M0，CG-H-M1方法表示结合列生成与启发式算法求解模型M1，B&P-M1方法为本文所提的分支定价算法。从表6可知，本文所提B&P方法能够有效求解不同规模问题。
